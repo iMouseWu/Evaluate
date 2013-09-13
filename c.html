@@ -1,0 +1,35 @@
+<html>
+<body>
+	<div>
+	<img src="unchoose.png">
+	<img src="unchoose.png">
+	<img src="unchoose.png">
+	<img src="unchoose.png">
+	<img src="unchoose.png">
+	<div>
+     <script src="http://code.jquery.com/jquery.js"></script>
+	<script src="jquery-1.6.4.min.js"></script>
+     
+	<script type="text/javascript">
+     $("img").mouseover(function img_mouseover(){
+     	$(this).attr("src","choose.png");
+     	$(this).prevAll().attr("src","choose.png");
+     	$(this).nextAll().attr("src","unchoose.png");
+     });
+     $("img").toggle(
+     	function(){
+     	$("img").unbind("mouseover");
+     	alert($(this).prevAll().length+1);
+     },
+     function(){
+     	$("img").mouseover(function img_mouseover(){
+     	$(this).attr("src","choose.png");
+     	$(this).prevAll().attr("src","choose.png");
+     	$(this).nextAll().attr("src","unchoose.png");
+     });
+     }
+     );
+
+	</script>
+	</body>
+</html>
